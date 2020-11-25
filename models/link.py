@@ -12,3 +12,6 @@ class Link:
 
 class LinkDatabaseRepository(BASE_REPOSITORY):
     ''' '''
+
+    def get_links_by_category(self):
+        ...

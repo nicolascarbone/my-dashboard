@@ -1,5 +1,3 @@
-# import sqlite3
-# import os
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -14,13 +12,6 @@ class SqlLiteRepository(AbstractRepository):
 
     @classmethod
     def session_factory(cls):
-
-        # host = os.environ.get('DB_HOST', 'localhost')
-        # port = 54321 if host == 'localhost' else 5432
-        # password = os.environ.get('DB_PASSWORD', 'abc123')
-        # user, db_name = 'allocation', 'allocation'
-        # uri = f'postgresql://{user}:{password}@{host}:{port}/{db_name}'
-
         return sessionmaker(bind=create_engine('sqlite:///database.db'))()
 
     def add(self, model):
